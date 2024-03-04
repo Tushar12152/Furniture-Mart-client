@@ -3,13 +3,14 @@ import SearchDrawer from "./SearchDrawer";
 import { GoPerson } from "react-icons/go";
 import { CiHeart } from "react-icons/ci";
 import { MdOutlineShoppingCart } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 
 
 const Nav = () => {
     return (
         <div>
-            <div className="navbar bg-base-100 shadow-lg shadow-slate-400">
+            <div className="navbar max-w-screen-xl fixed z-10 bg-opacity-30 bg-black text-white">
   <div className="navbar-start flex gap-6">
 
     <span className="text-xl"> <Drawer/></span>
@@ -22,7 +23,7 @@ const Nav = () => {
   </div>
   <div className="navbar-end flex gap-6">
   
-      <span className="text-xl"> <GoPerson/></span>
+      <Link to='/login'className="text-xl"> <GoPerson/></Link>
     
       
      <span className="text-xl"> <CiHeart/></span>
