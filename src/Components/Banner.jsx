@@ -18,18 +18,18 @@ const Banner = () => {
             </Slide>
           <Slide index={1}>   
           
-           <Slides title='Furniture mart' heading='lorem ipsum glubal finrtyun furniture' img='https://i.ibb.co/s1ycDT7/35-450x572.jpg' />
+           <Slides title='Sale off 25%' heading='lorem ipsum glubal finrtyun furniture' img='https://i.ibb.co/s1ycDT7/35-450x572.jpg' />
            
            </Slide>
           <Slide index={2}>
 
-          <Slides title='Furniture mart' heading='lorem ipsum glubal finrtyun furniture' img='https://i.ibb.co/G0MkrYm/13-2-450x572.jpg' />
+          <Slides title='Up to 45% off' heading='lorem ipsum glubal finrtyun furniture' img='https://i.ibb.co/G0MkrYm/13-2-450x572.jpg' />
 
           </Slide>
         </Slider>
         <ButtonBack>Back</ButtonBack>
         <ButtonNext>Next</ButtonNext>
-      </CarouselProvider>
+              </CarouselProvider>
         </div>
     );
 };

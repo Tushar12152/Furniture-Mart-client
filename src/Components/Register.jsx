@@ -2,34 +2,31 @@ import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
+const Register = () => {
 
-const Login = () => {
+    const [show,setshow]=useState(true)
 
-const [show,setshow]=useState(true)
+    const handleRegister=e=>{
+        e.preventDefault()
 
+        const email=e.target.email.value;
+        const password= e.target.password.value;
 
-   const handleLogin=e=>{
-           e.preventDefault()
+        console.log(email,password);
 
-           const email=e.target.email.value;
-           const password= e.target.password.value;
-
-           console.log(email,password);
-
-   }
+}
 
 
     return (
         <div>
+             <div>
              <div className="hero min-h-screen bg-base-200">
   <div className="hero-content flex-col lg:flex-row-reverse">
     <div className="text-center lg:text-left">
     
-
-
     </div>
     <div className="card  w-full max-w-sm shadow-2xl bg-white">
-      <form onSubmit={handleLogin} className="card-body">
+      <form onSubmit={handleRegister} className="card-body">
         <div className="form-control">
           <label className="label">
             <span className="label-text">Email</span>
@@ -45,17 +42,16 @@ const [show,setshow]=useState(true)
 
          <span onClick={()=>setshow(!show)} className="absolute top-4 right-2"> {show?<FaEye/>:<FaEyeSlash/>} </span>
 
-
          </div>
           <label className="label">
             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
           </label>
         </div>
         <div className="form-control mt-6">
-          <button className="btn bg-black text-white">Login</button>
+          <button className="btn bg-black text-white">Register</button>
         </div>
           
-          <p>New here? Please <Link className="text-blue-400" to='/register'>Register</Link></p>
+          <p>Already have an account? Please <Link className="text-blue-400" to='/login'>Login</Link></p>
 
       </form>
     
@@ -64,7 +60,8 @@ const [show,setshow]=useState(true)
 
 </div>
         </div>
+        </div>
     );
 };
 
-export default Login;
+export default Register;
