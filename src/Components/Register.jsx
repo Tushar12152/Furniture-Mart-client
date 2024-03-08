@@ -14,6 +14,8 @@ const Register = () => {
 
         console.log(email,password);
 
+        
+
 }
 
 
