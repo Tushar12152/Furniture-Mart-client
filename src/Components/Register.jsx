@@ -1,10 +1,14 @@
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import UseAuth from "../Hooks/UseAuth";
+import swal from "sweetalert";
 
 const Register = () => {
 
     const [show,setshow]=useState(true)
+
+    const {createUser}=UseAuth()
 
     const handleRegister=e=>{
         e.preventDefault()
@@ -12,9 +16,20 @@ const Register = () => {
         const email=e.target.email.value;
         const password= e.target.password.value;
 
-        console.log(email,password);
+        // console.log(email,password);
 
-        
+        createUser(email,password)
+        .then(data=>{
+           console.log(data);
+           if(data?.user){
+            swal("Success!", "Registration complete", "success");
+           }
+        })
+        .catch(err=>{
+           swal('error',`${err}`,'error')
+        })
+
+
 
 }
 
