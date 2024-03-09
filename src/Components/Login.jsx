@@ -1,20 +1,35 @@
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import UseAuth from "../Hooks/UseAuth";
+import swal from "sweetalert";
 
 
 const Login = () => {
 
 const [show,setshow]=useState(true)
 
+const {signIn}=UseAuth()
+const navigate=useNavigate()
 
    const handleLogin=e=>{
            e.preventDefault()
 
            const email=e.target.email.value;
            const password= e.target.password.value;
-
            console.log(email,password);
+              
+           signIn(email,password)
+           .then(data=>{
+            if(data?.user){
+              swal('logged in')
+              navigate('/')
+            }
+           })
+           .catch(err=>{
+             swal('error',`${err}`,"error")
+           })
+           
 
    }
 

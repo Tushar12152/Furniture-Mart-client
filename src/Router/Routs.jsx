@@ -3,6 +3,7 @@ import Layout from "../Layouts/Layout";
 import Login from "../Components/Login";
 import HomePage from "../Components/HomePage";
 import Register from "../Components/Register";
+import Dashboard from "../Dashboard/Dashboard";
 
 
 
@@ -24,7 +25,14 @@ export const Routs = createBrowserRouter([
             {
                 path:'/register',
                 element:<Register/>
-            }
+            },
+
         ]
+
+    },
+
+    {
+        path:'/dashboard',
+        element:<Dashboard/>
     }
 ])

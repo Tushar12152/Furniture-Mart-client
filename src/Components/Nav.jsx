@@ -4,10 +4,14 @@ import { GoPerson } from "react-icons/go";
 import { CiHeart } from "react-icons/ci";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { Link } from "react-router-dom";
+import { getAuth } from "firebase/auth";
 
 
 
 const Nav = () => {
+
+  const {user}=getAuth()
+
     return (
         <div>
             <div className="navbar max-w-screen-xl fixed z-10 bg-opacity-30 bg-black text-white">
@@ -23,7 +27,7 @@ const Nav = () => {
   </div>
   <div className="navbar-end flex gap-6">
   
-      <Link to='/login'className="text-xl"> <GoPerson/></Link>
+      <Link to={user?'/dashboard':'/login'}  className="text-xl"> <GoPerson/></Link>
     
       
      <span className="text-xl"> <CiHeart/></span>
