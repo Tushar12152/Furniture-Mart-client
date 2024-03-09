@@ -3,6 +3,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import UseAuth from "../Hooks/UseAuth";
 import swal from "sweetalert";
+import toast from "react-hot-toast";
 
 
 const Login = () => {
@@ -22,8 +23,8 @@ const navigate=useNavigate()
            signIn(email,password)
            .then(data=>{
             if(data?.user){
-              swal('logged in')
-              navigate('/')
+             toast.success('logged in')
+              navigate('/dashboard')
             }
            })
            .catch(err=>{

@@ -1,6 +1,20 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
+import UseAuth from "../Hooks/UseAuth";
+import toast from "react-hot-toast";
 
 const Dashboard = () => {
+    const navigate=useNavigate()
+    const {logOut}=UseAuth()
+
+    const handlelogout=()=>{
+          logOut()
+          toast.success('Logged out')
+
+          navigate('/')
+
+    }
+
+
     return (
         <div className="grid grid-cols-12 h-full">
         
@@ -11,41 +25,11 @@ const Dashboard = () => {
                      <li>
                          <NavLink to="/dashboard/adminProfile">
                         
-                             Admin Profile</NavLink>
-                     </li>
-                     <li>
-                         <NavLink to="/dashboard/manageUsers">
-                    
-                             Manage Users</NavLink>
-                     </li>
-
-
-                     <li>
-                         <NavLink to="/dashboard/addmeal">
-                          
-                             Add Meal</NavLink>
+                          Profile</NavLink>
                      </li>
                      
-                     <li>
-                         <NavLink to="/dashboard/allmeal">
-                          
-                             All Meals</NavLink>
-                     </li>
-                     <li>
-                         <NavLink to="/dashboard/allreview">
-                     
-                             All Review</NavLink>
-                     </li>
-                     <li>
-                         <NavLink to="/dashboard/servemeal">
-                    
-                             Serve Meal</NavLink>
-                     </li>
-                     <li>
-                         <NavLink to="/dashboard/upcomingmeal">
-                      
-                             Upcoming Meal</NavLink>
-                     </li>
+
+
                  </>
                      
                     
@@ -60,6 +44,11 @@ const Dashboard = () => {
                  <NavLink to="/">
                     
                      Home</NavLink>
+             </li>
+             <li>
+                 <NavLink onClick={handlelogout}>
+                    
+                     Log out</NavLink>
              </li>
             
          </ul>

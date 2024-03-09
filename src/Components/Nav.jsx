@@ -4,13 +4,17 @@ import { GoPerson } from "react-icons/go";
 import { CiHeart } from "react-icons/ci";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { Link } from "react-router-dom";
-import { getAuth } from "firebase/auth";
+import UseAuth from "../Hooks/UseAuth";
+
 
 
 
 const Nav = () => {
 
-  const {user}=getAuth()
+  const {user}=UseAuth()
+
+
+  console.log(user);
 
     return (
         <div>
