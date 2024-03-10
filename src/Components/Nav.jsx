@@ -27,7 +27,7 @@ const Nav = () => {
 
   </div>
   <div className="navbar-center">
-    <a className=" text-xl">Furniture Mart</a>
+    <Link to='/' className=" text-xl">Furniture Mart</Link>
   </div>
   <div className="navbar-end flex gap-6">
   

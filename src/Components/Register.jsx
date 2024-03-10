@@ -3,6 +3,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import UseAuth from "../Hooks/UseAuth";
 import swal from "sweetalert";
+import toast from "react-hot-toast";
 
 const Register = () => {
 
@@ -18,15 +19,18 @@ const Register = () => {
         const name= e.target.name.value;
 
         const info={
-           email,password,name
+           email,
+           password,
+           name,
+           role:'user',
         }
         console.log(info);
 
         createUser(email,password)
         .then(data=>{
-           console.log(data);
+          //  console.log(data);
            if(data?.user){
-            swal("Success!", "Registration complete", "success");
+            toast.success("Success!", "Registration complete", "success");
            }
         })
         .catch(err=>{
