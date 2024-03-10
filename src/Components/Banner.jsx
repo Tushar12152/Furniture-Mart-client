@@ -1,4 +1,4 @@
-import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
+import { CarouselProvider, Slider, Slide, } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import Slides from './../Hooks/Slider';
 
@@ -7,7 +7,7 @@ const Banner = () => {
         <div>
               <CarouselProvider
         naturalSlideWidth={100}
-        naturalSlideHeight={125}
+        naturalSlideHeight={55}
         totalSlides={3}
       >
         <Slider>
@@ -27,8 +27,7 @@ const Banner = () => {
 
           </Slide>
         </Slider>
-        <ButtonBack>Back</ButtonBack>
-        <ButtonNext>Next</ButtonNext>
+     
               </CarouselProvider>
         </div>
     );

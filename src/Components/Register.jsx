@@ -15,8 +15,12 @@ const Register = () => {
 
         const email=e.target.email.value;
         const password= e.target.password.value;
+        const name= e.target.name.value;
 
-        // console.log(email,password);
+        const info={
+           email,password,name
+        }
+        console.log(info);
 
         createUser(email,password)
         .then(data=>{
@@ -44,6 +48,15 @@ const Register = () => {
     </div>
     <div className="card  w-full max-w-sm shadow-2xl bg-white">
       <form onSubmit={handleRegister} className="card-body">
+
+      <div className="form-control">
+          <label className="label">
+            <span className="label-text">Name</span>
+          </label>
+          <input name="name" type="text" placeholder="Name" className="input input-bordered" required />
+        </div>
+
+
         <div className="form-control">
           <label className="label">
             <span className="label-text">Email</span>

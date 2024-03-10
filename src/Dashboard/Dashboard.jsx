@@ -18,7 +18,7 @@ const Dashboard = () => {
     return (
         <div className="grid grid-cols-12 h-full">
         
-     <div className="col-span-5 md:col-span-3  min-h-screen bg-[#f76042] text-white">
+     <div className="col-span-5 md:col-span-3  min-h-screen bg-slate-400 text-white">
          <ul className="menu p-4">
              {
                <>

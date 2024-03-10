@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 const Slides = ({title,img,heading}) => {
     return (
-        <div className="min-h-screen bg-gray-100 flex justify-between items-center">
+        <div className=" flex justify-between items-center">
             <div className='pl-20'>
                  {
                     title &&  <h1 className='text-lg font-bold '>{title}</h1>
@@ -13,7 +13,7 @@ const Slides = ({title,img,heading}) => {
                  }
             </div>
            {
-             img&&  <img className='w-[50%] ' src={img}  />
+             img&&  <img className=' ' src={img}  />
            }
         </div>
     );
