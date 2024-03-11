@@ -4,6 +4,7 @@ import Login from "../Components/Login";
 import HomePage from "../Components/HomePage";
 import Register from "../Components/Register";
 import Dashboard from "../Dashboard/Dashboard";
+import AddProduct from "../Dashboard/AddProduct";
 
 
 
@@ -33,6 +34,12 @@ export const Routs = createBrowserRouter([
 
     {
         path:'/dashboard',
-        element:<Dashboard/>
+        element:<Dashboard/>,
+        children:[
+            {
+                path:'/dashboard/addProduct',
+                element:<AddProduct/>
+            }
+        ]
     }
 ])

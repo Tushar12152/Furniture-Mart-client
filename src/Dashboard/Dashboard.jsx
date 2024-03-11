@@ -28,6 +28,12 @@ const Dashboard = () => {
                           Profile</NavLink>
                      </li>
                      
+                     <li>
+                         <NavLink to="/dashboard/addProduct">
+                        
+                          Add Product</NavLink>
+                     </li>
+                     
 
 
                  </>
@@ -46,9 +52,9 @@ const Dashboard = () => {
                      Home</NavLink>
              </li>
              <li>
-                 <NavLink onClick={handlelogout}>
+                 <a onClick={handlelogout}>
                     
-                     Log out</NavLink>
+                     Log out</a>
              </li>
             
          </ul>
