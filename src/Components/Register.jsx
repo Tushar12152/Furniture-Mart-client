@@ -4,11 +4,12 @@ import { Link } from "react-router-dom";
 import UseAuth from "../Hooks/UseAuth";
 import swal from "sweetalert";
 import toast from "react-hot-toast";
+import useAxiosSecure from "../Hooks/useAxiosSecure";
 
 const Register = () => {
 
     const [show,setshow]=useState(true)
-
+    const axiosSecure=useAxiosSecure()
     const {createUser}=UseAuth()
 
     const handleRegister=e=>{
@@ -24,12 +25,13 @@ const Register = () => {
            name,
            role:'user',
         }
-        console.log(info);
+        // console.log(info);
 
         createUser(email,password)
         .then(data=>{
           //  console.log(data);
            if(data?.user){
+             axiosSecure.post('/user', info)
             toast.success("Success!", "Registration complete", "success");
            }
         })
