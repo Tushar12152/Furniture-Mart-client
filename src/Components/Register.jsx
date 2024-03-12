@@ -2,7 +2,6 @@ import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import UseAuth from "../Hooks/UseAuth";
-import swal from "sweetalert";
 import toast from "react-hot-toast";
 import useAxiosSecure from "../Hooks/useAxiosSecure";
 
@@ -12,7 +11,7 @@ const Register = () => {
     const axiosSecure=useAxiosSecure()
     const {createUser}=UseAuth()
 
-    const handleRegister=e=>{
+    const handleRegister=async e=>{
         e.preventDefault()
 
         const email=e.target.email.value;
@@ -27,17 +26,24 @@ const Register = () => {
         }
         // console.log(info);
 
-        createUser(email,password)
-        .then(data=>{
+       const result=await createUser(email,password)
+        
           //  console.log(data);
-           if(data?.user){
-             axiosSecure.post('/user', info)
-            toast.success("Success!", "Registration complete", "success");
-           }
-        })
-        .catch(err=>{
-           swal('error',`${err}`,'error')
-        })
+           .then(()=>{
+            if(result?.user){
+              axiosSecure.post('/users', info)
+               .then(data=>{
+                  if(data.data.insertedId){
+                    toast.success("Success!");
+                  }
+               })
+            
+            }
+           })
+           .catch(err=>{
+            toast.error(`${err}`)
+           })
+       
 
 
 
