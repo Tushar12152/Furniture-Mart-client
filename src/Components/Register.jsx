@@ -4,12 +4,32 @@ import { Link } from "react-router-dom";
 import UseAuth from "../Hooks/UseAuth";
 import toast from "react-hot-toast";
 import useAxiosSecure from "../Hooks/useAxiosSecure";
+import { useQuery } from "@tanstack/react-query";
 
 const Register = () => {
 
     const [show,setshow]=useState(true)
     const axiosSecure=useAxiosSecure()
     const {createUser}=UseAuth()
+    
+
+    const { data=[] } = useQuery({
+      queryKey: ['users'],
+      queryFn: async () =>{
+          const res=await axiosSecure.get(`/users`)
+   
+          return res.data
+      }
+      
+    })
+
+    console.log(data);
+
+
+
+
+
+
 
     const handleRegister=async e=>{
         e.preventDefault()
