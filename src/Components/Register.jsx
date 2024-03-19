@@ -11,7 +11,10 @@ const Register = () => {
     const [show,setshow]=useState(true)
     const axiosSecure=useAxiosSecure()
     const {createUser}=UseAuth()
-    
+    const {user}=UseAuth()
+    console.log('logged',user?.email);
+
+
 
     const { data=[] } = useQuery({
       queryKey: ['users'],
@@ -23,7 +26,7 @@ const Register = () => {
       
     })
 
-    console.log(data);
+    // console.log(data);
 
 
 
