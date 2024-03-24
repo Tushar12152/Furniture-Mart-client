@@ -2,7 +2,7 @@
 const Lamp = () => {
     return (
         <div className="flex justify-between items-center mt-10">
-             <div>
+             <div className="hover:border-t-2 hover:border-l-2 border-black duration-1000">
                 <div className="relative">
                      <img src="https://i.ibb.co/cwqFbrj/22-450x572.jpg" alt="" />
 
