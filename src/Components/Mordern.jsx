@@ -58,6 +58,13 @@ const Mordern = () => {
       price: 100,
       status: "sold out",
     },
+    {
+      id: 9,
+      image: "https://i.ibb.co/YQywdHc/10-450x572.jpg",
+      title: "Garden Chair With Armrests",
+      price: 100,
+      status: "sold out",
+    },
   ];
 
   return (
@@ -77,6 +84,7 @@ const Mordern = () => {
       <div className="badge badge-error text-white">{card?.status}</div>
     </h2>
     <p>{card?.title}</p>
+    <h1 className="font-bold">$ {card?.price}</h1>
     <div className="card-actions justify-end">
      <button className="bg-red-400 p-2 text-white rounded-lg ">Add To Cart </button>
     </div>

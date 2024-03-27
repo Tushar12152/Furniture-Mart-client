@@ -9,11 +9,11 @@ const Slides = ({title,img,heading}) => {
                  }
 
                  {
-                    heading && <h1 className='font-bold text-xl'>{heading}</h1>
+                    heading && <h1 className='font-bold text-2xl'>{heading}</h1>
                  }
             </div>
            {
-             img&&  <img className=' ' src={img}  />
+             img&&  <img className='rounded-2xl p-5 ' src={img}  />
            }
         </div>
     );

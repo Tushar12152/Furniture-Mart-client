@@ -1,4 +1,5 @@
 import Banner from "./Banner";
+import Blogs from "./Blogs";
 import Mordern from "./Mordern";
 // import Lamp from "./Lamp";
 import ShopByCategory from "./ShopByCategory";
@@ -10,6 +11,8 @@ const HomePage = () => {
             <ShopByCategory/>
             {/* <Lamp/> */}
             <Mordern/>
+
+            <Blogs/> 
         </div>
     );
 };
