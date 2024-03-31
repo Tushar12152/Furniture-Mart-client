@@ -5,6 +5,7 @@ import HomePage from "../Components/HomePage";
 import Register from "../Components/Register";
 import Dashboard from "../Dashboard/Dashboard";
 import AddProduct from "../Dashboard/AddProduct";
+import WoodFurniture from "../Components/WoodFurniture";
 
 
 
@@ -28,6 +29,10 @@ export const Routs = createBrowserRouter([
                 element:<Register/>
             },
 
+            {
+                path:'/wood',
+                element:<WoodFurniture/>
+            }
         ]
 
     },
