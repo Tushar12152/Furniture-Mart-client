@@ -6,6 +6,7 @@ import Register from "../Components/Register";
 import Dashboard from "../Dashboard/Dashboard";
 import AddProduct from "../Dashboard/AddProduct";
 import WoodFurniture from "../Components/WoodFurniture";
+import SteelFurniture from "../Components/SteelFurniture";
 
 
 
@@ -32,6 +33,10 @@ export const Routs = createBrowserRouter([
             {
                 path:'/wood',
                 element:<WoodFurniture/>
+            },
+            {
+                path:'/steel',
+                element:<SteelFurniture/>
             }
         ]
 
