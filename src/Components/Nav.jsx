@@ -14,7 +14,7 @@ const Nav = () => {
   const {user}=UseAuth()
 
 
-  console.log(user);
+  // console.log(user);
 
     return (
         <div>

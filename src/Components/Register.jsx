@@ -4,37 +4,37 @@ import { Link } from "react-router-dom";
 import UseAuth from "../Hooks/UseAuth";
 import toast from "react-hot-toast";
 import useAxiosSecure from "../Hooks/useAxiosSecure";
-import { useQuery } from "@tanstack/react-query";
+// import { useQuery } from "@tanstack/react-query";
 
 const Register = () => {
 
     const [show,setshow]=useState(true)
     const axiosSecure=useAxiosSecure()
     const {createUser}=UseAuth()
-    const {user}=UseAuth()
-    console.log('logged',user?.email);
+    // const {user}=UseAuth()
+    // console.log('logged',user?.email);
 
 
 
-    const { data=[] } = useQuery({
-      queryKey: ['users'],
-      queryFn: async () =>{
-          const res=await axiosSecure.get(`/users`)
+    // const { data=[] } = useQuery({
+    //   queryKey: ['users'],
+    //   queryFn: async () =>{
+    //       const res=await axiosSecure.get(`/users`)
    
-          return res.data
-      }
+    //       return res.data
+    //   }
       
-    })
+    // })
 
-    console.log(data);
-
-
+    // console.log(data);
 
 
 
 
 
-    const handleRegister=async e=>{
+
+
+    const handleRegister=async(e)=>{
         e.preventDefault()
 
         const email=e.target.email.value;
@@ -51,9 +51,9 @@ const Register = () => {
 
        const result=await createUser(email,password)
         
-          //  console.log(data);
-           .then(()=>{
-            if(result?.user){
+          //  console.log(result.user.email)
+           
+            if(result?.user?.email){
               axiosSecure.post('/users', info)
                .then(data=>{
                   if(data.data.insertedId){
@@ -62,13 +62,8 @@ const Register = () => {
                })
             
             }
-           })
-           .catch(err=>{
-            toast.error(`${err}`)
-           })
-       
-
-
+         
+  
 
 }
 
