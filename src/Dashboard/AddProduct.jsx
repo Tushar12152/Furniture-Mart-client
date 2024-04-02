@@ -4,6 +4,11 @@ const AddProduct = () => {
     return (
         <div>
             <Title heading={'Add Product'}></Title>
+
+
+             
+
+
         </div>
     );
 };

@@ -32,10 +32,11 @@ const Dashboard = () => {
 const loggedUser=data.find(user=>user?.email===logedMail)
 // console.log('oo',loggedUser);
 
+// console.log(loggedUser);
 
-const Admin=loggedUser.role==='admin'
+const Admin=loggedUser?.role==='admin'
 
-console.log(Admin);
+// console.log(Admin);
 
 
 
@@ -75,7 +76,7 @@ console.log(Admin);
 
 
 
-<>
+                <>
                      <li>
                          <NavLink to="/dashboard/adminProfile">
                         
