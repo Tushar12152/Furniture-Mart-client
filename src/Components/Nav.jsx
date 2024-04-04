@@ -18,7 +18,7 @@ const Nav = () => {
 
     return (
         <div>
-            <div className="navbar max-w-screen-xl fixed z-10 bg-opacity-30 bg-black text-white">
+            <div className="navbar max-w-[95%] fixed z-10 bg-opacity-30 bg-black text-white">
   <div className="navbar-start flex gap-6">
 
     <span className="text-xl"> <Drawer/></span>
