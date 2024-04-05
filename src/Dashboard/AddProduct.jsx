@@ -1,7 +1,11 @@
+import toast from "react-hot-toast";
 import Title from "../Hooks/Title";
 import { imageUpload } from "../Hooks/UploadImage";
+import useAxiosSecure from './../Hooks/useAxiosSecure';
 
 const AddProduct = () => {
+
+const axiosSecure=useAxiosSecure()
 
   const handleSubmit= async e=>{
     
@@ -20,11 +24,19 @@ const AddProduct = () => {
         description,price,condition,item,image
     }
 
-    console.log(product);
+    // console.log(product);
+
+    const result=await axiosSecure.post('/product',product)
+
+    // console.log(result);
+    if(result?.data?.insertedId){
+        toast.success('Product successfully added')
+    }
+
 
 
   }
-
+  
 
     return (
         <div>
