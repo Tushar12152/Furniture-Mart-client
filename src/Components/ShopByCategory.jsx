@@ -103,7 +103,7 @@ const ShopByCategory = () => {
 
     return (
         <div>
-            <h1 className='font-bold text-xl'>S H O P    BY    P R O D U C T</h1>
+            <h1 className='font-bold text-xl my-16'>S H O P    BY    P R O D U C T</h1>
              <Swiper
         slidesPerView={1}
         spaceBetween={10}
